@@ -1,0 +1,79 @@
+
+entity Product {
+    productId Long required 
+	productName String,
+    productPrice Long, 
+    userGender String
+}
+
+entity Catagory {
+    catagoryId Long required
+	catagoryName String
+}
+
+// an ignored comment
+/** not an ignored comment */
+
+
+entity Title {
+	description String,
+     size Double,
+    height Double,
+    width Double,
+    weight Double,
+}
+
+
+
+entity Discount {
+	startDate Instant,
+	endDate Instant,
+	discountPersontage Long
+}
+
+enum Language {
+    Marathi, ENGLISH, HINDI
+}
+
+relationship OneToOne {
+	Product{title} to Title
+    Product{discount} to Discount
+}
+
+
+
+relationship OneToMany {
+	
+    Catagory{product} to Product
+    Discount{product} to Product
+}
+
+
+// defining multiple OneToMany relationships with comments
+relationship OneToMany {
+	
+    Product{department} to Department,
+    Order{product} to Product
+    
+	
+}
+
+relationship ManyToOne {
+	Product {catagory} to Catagory
+    
+}
+
+
+
+// Set pagination options
+paginate Catagory, Product with infinite-scroll
+
+
+// Use Data Transfer Objects (DTO)
+// dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl except Employee, Job
+
+// Set an angular suffix
+// angularSuffix * with mySuffix
