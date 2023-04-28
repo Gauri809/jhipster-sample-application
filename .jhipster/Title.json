@@ -1,0 +1,38 @@
+{
+  "applications": "*",
+  "changelogDate": "20230428073341",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "title",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "Long",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "height",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "width",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "weight",
+      "fieldType": "Double"
+    }
+  ],
+  "fluentMethods": true,
+  "javadoc": "not an ignored comment",
+  "jpaMetamodelFiltering": false,
+  "name": "Title",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [],
+  "service": "serviceImpl"
+}

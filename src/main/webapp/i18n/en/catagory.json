@@ -1,0 +1,26 @@
+{
+  "jhipsterSampleApplicationApp": {
+    "catagory": {
+      "home": {
+        "title": "Catagories",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Catagory",
+        "createOrEditLabel": "Create or edit a Catagory",
+        "notFound": "No Catagories found"
+      },
+      "created": "A new Catagory is created with identifier {{ param }}",
+      "updated": "A Catagory is updated with identifier {{ param }}",
+      "deleted": "A Catagory is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Catagory {{ id }}?"
+      },
+      "detail": {
+        "title": "Catagory"
+      },
+      "id": "ID",
+      "catagoryId": "Catagory Id",
+      "catagoryName": "Catagory Name",
+      "product": "Product"
+    }
+  }
+}

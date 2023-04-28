@@ -16,8 +16,9 @@ entity Catagory {
 
 
 entity Title {
+    Id Long required
 	description String,
-     size Double,
+    
     height Double,
     width Double,
     weight Double,
@@ -26,9 +27,10 @@ entity Title {
 
 
 entity Discount {
+     
 	startDate Instant,
 	endDate Instant,
-	discountPersontage Long
+	discountPersontage Long required
 }
 
 enum Language {
@@ -45,18 +47,12 @@ relationship OneToOne {
 relationship OneToMany {
 	
     Catagory{product} to Product
-    Discount{product} to Product
+    
 }
 
 
 // defining multiple OneToMany relationships with comments
-relationship OneToMany {
-	
-    Product{department} to Department,
-    Order{product} to Product
-    
-	
-}
+
 
 relationship ManyToOne {
 	Product {catagory} to Catagory

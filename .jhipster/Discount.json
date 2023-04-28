@@ -1,0 +1,29 @@
+{
+  "applications": "*",
+  "changelogDate": "20230428073342",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "discount",
+  "fields": [
+    {
+      "fieldName": "startDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "endDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "discountPersontage",
+      "fieldType": "Long",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Discount",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [],
+  "service": "serviceImpl"
+}

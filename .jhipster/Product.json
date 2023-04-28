@@ -1,0 +1,57 @@
+{
+  "applications": "*",
+  "changelogDate": "20230428073339",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "product",
+  "fields": [
+    {
+      "fieldName": "productId",
+      "fieldType": "Long",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "productName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "productPrice",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "userGender",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Product",
+  "pagination": "infinite-scroll",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "title",
+      "ownerSide": true,
+      "relationshipName": "title",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "discount",
+      "ownerSide": true,
+      "relationshipName": "discount",
+      "relationshipType": "one-to-one"
+    },
+    {
+      "otherEntityName": "catagory",
+      "relationshipName": "catagory",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "catagory",
+      "otherEntityRelationshipName": "product",
+      "relationshipName": "catagory",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceImpl"
+}
