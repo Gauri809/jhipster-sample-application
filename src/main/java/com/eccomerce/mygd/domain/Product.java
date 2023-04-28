@@ -45,12 +45,6 @@ public class Product implements Serializable {
     private Discount discount;
 
     @ManyToOne
-    @ManyToOne
-    @JsonIgnoreProperties(value = { "products" }, allowSetters = true)
-    private Catagory catagory;
-
-    @ManyToOne
-    @ManyToOne
     @JsonIgnoreProperties(value = { "products" }, allowSetters = true)
     private Catagory catagory;
 
@@ -144,19 +138,6 @@ public class Product implements Serializable {
 
     public Product discount(Discount discount) {
         this.setDiscount(discount);
-        return this;
-    }
-
-    public Catagory getCatagory() {
-        return this.catagory;
-    }
-
-    public void setCatagory(Catagory catagory) {
-        this.catagory = catagory;
-    }
-
-    public Product catagory(Catagory catagory) {
-        this.setCatagory(catagory);
         return this;
     }
 
