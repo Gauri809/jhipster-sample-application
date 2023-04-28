@@ -17,7 +17,7 @@ entity Catagory {
 
 entity Title {
 	description String,
-     size Double,
+    
     height Double,
     width Double,
     weight Double,
