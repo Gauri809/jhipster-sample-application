@@ -17,7 +17,7 @@ entity Catagory {
 
 entity Title {
 	description String,
-     size Double,
+    
     height Double,
     width Double,
     weight Double,
@@ -50,13 +50,7 @@ relationship OneToMany {
 
 
 // defining multiple OneToMany relationships with comments
-relationship OneToMany {
-	
-    Product{department} to Department,
-    Order{product} to Product
-    
-	
-}
+
 
 relationship ManyToOne {
 	Product {catagory} to Catagory
