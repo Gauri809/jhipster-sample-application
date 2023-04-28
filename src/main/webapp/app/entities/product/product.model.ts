@@ -11,7 +11,6 @@ export interface IProduct {
   title?: Pick<ITitle, 'id'> | null;
   discount?: Pick<IDiscount, 'id'> | null;
   catagory?: Pick<ICatagory, 'id'> | null;
-  catagory?: Pick<ICatagory, 'id'> | null;
 }
 
 export type NewProduct = Omit<IProduct, 'id'> & { id: null };

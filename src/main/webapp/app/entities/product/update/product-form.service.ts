@@ -25,7 +25,6 @@ type ProductFormGroupContent = {
   title: FormControl<IProduct['title']>;
   discount: FormControl<IProduct['discount']>;
   catagory: FormControl<IProduct['catagory']>;
-  catagory: FormControl<IProduct['catagory']>;
 };
 
 export type ProductFormGroup = FormGroup<ProductFormGroupContent>;
@@ -53,7 +52,6 @@ export class ProductFormService {
       userGender: new FormControl(productRawValue.userGender),
       title: new FormControl(productRawValue.title),
       discount: new FormControl(productRawValue.discount),
-      catagory: new FormControl(productRawValue.catagory),
       catagory: new FormControl(productRawValue.catagory),
     });
   }
