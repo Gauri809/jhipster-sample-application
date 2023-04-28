@@ -1,0 +1,32 @@
+{
+  "applications": "*",
+  "changelogDate": "20230428073340",
+  "dto": "no",
+  "embedded": false,
+  "entityTableName": "catagory",
+  "fields": [
+    {
+      "fieldName": "catagoryId",
+      "fieldType": "Long",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "catagoryName",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Catagory",
+  "pagination": "infinite-scroll",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "product",
+      "otherEntityRelationshipName": "catagory",
+      "relationshipName": "product",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "service": "serviceImpl"
+}

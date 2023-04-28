@@ -1,0 +1,154 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-product-heading"
+        data-cy="ProductCreateUpdateHeading"
+        jhiTranslate="jhipsterSampleApplicationApp.product.home.createOrEditLabel"
+      >
+        Create or edit a Product
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="row mb-3" *ngIf="editForm.controls.id.value !== null">
+          <label class="form-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="jhipsterSampleApplicationApp.product.productId" for="field_productId">Product Id</label>
+          <input type="number" class="form-control" name="productId" id="field_productId" data-cy="productId" formControlName="productId" />
+          <div *ngIf="editForm.get('productId')!.invalid && (editForm.get('productId')!.dirty || editForm.get('productId')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('productId')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+            <small
+              class="form-text text-danger"
+              [hidden]="!editForm.get('productId')?.errors?.number"
+              jhiTranslate="entity.validation.number"
+            >
+              This field should be a number.
+            </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="jhipsterSampleApplicationApp.product.productName" for="field_productName"
+            >Product Name</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="productName"
+            id="field_productName"
+            data-cy="productName"
+            formControlName="productName"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="jhipsterSampleApplicationApp.product.productPrice" for="field_productPrice"
+            >Product Price</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="productPrice"
+            id="field_productPrice"
+            data-cy="productPrice"
+            formControlName="productPrice"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="jhipsterSampleApplicationApp.product.userGender" for="field_userGender"
+            >User Gender</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="userGender"
+            id="field_userGender"
+            data-cy="userGender"
+            formControlName="userGender"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="jhipsterSampleApplicationApp.product.title" for="field_title">Title</label>
+          <select class="form-control" id="field_title" data-cy="title" name="title" formControlName="title" [compareWith]="compareTitle">
+            <option [ngValue]="null"></option>
+            <option [ngValue]="titleOption" *ngFor="let titleOption of titlesSharedCollection">{{ titleOption.id }}</option>
+          </select>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="jhipsterSampleApplicationApp.product.discount" for="field_discount">Discount</label>
+          <select
+            class="form-control"
+            id="field_discount"
+            data-cy="discount"
+            name="discount"
+            formControlName="discount"
+            [compareWith]="compareDiscount"
+          >
+            <option [ngValue]="null"></option>
+            <option [ngValue]="discountOption" *ngFor="let discountOption of discountsSharedCollection">{{ discountOption.id }}</option>
+          </select>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="jhipsterSampleApplicationApp.product.catagory" for="field_catagory">Catagory</label>
+          <select
+            class="form-control"
+            id="field_catagory"
+            data-cy="catagory"
+            name="catagory"
+            formControlName="catagory"
+            [compareWith]="compareCatagory"
+          >
+            <option [ngValue]="null"></option>
+            <option [ngValue]="catagoryOption" *ngFor="let catagoryOption of catagoriesSharedCollection">{{ catagoryOption.id }}</option>
+          </select>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" jhiTranslate="jhipsterSampleApplicationApp.product.catagory" for="field_catagory">Catagory</label>
+          <select
+            class="form-control"
+            id="field_catagory"
+            data-cy="catagory"
+            name="catagory"
+            formControlName="catagory"
+            [compareWith]="compareCatagory"
+          >
+            <option [ngValue]="null"></option>
+            <option [ngValue]="catagoryOption" *ngFor="let catagoryOption of catagoriesSharedCollection">{{ catagoryOption.id }}</option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
